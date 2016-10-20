@@ -13,3 +13,16 @@
 # mod_three [7]  # => [1]
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
+
+
+def mod_three(input)
+	output = []
+	output = input.select {|element| element % 3 != 0}
+	new = output.map {|element| element % 3 }
+	return new
+end
+
+test = [0]
+
+puts mod_three(test)
+puts []
