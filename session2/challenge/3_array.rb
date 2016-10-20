@@ -7,5 +7,10 @@
 
 class String
   def every_other_char
+  	letters = self.split("")
+  	letters.select!.each_with_index {|element, i| i.even?}
+  	return letters.join("")
   end
 end
+
+puts "hejmeddig".every_other_char
