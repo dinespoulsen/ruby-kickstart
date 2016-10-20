@@ -7,3 +7,14 @@
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
 
 # This time you will have to define the method, it's called: get_squares
+
+def get_squares(input)
+	new = input.select {|element| input.include?(element*element.to_i)}
+	return new.sort
+end
+
+
+test = [ 9, 10, 81]
+
+puts get_squares(test)
+
