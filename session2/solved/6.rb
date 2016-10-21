@@ -2,6 +2,7 @@ class Integer
   def prime?
     return false if self < 2
     2.upto Math.sqrt(self) do |i|
+    	puts i
       return false if self % i == 0
     end
     true
@@ -11,3 +12,6 @@ end
 def prime_chars?(strings)
   strings.join.length.prime?
 end
+
+
+puts prime_chars?(["hejb"])

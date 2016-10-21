@@ -14,3 +14,21 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+
+def prime_chars?(input)
+number = input.join.length
+if input.empty? || input == [''] || number < 2 #~ /\s*/
+	return false
+elsif number == 2
+	return true
+else
+	2.upto Math.sqrt(number) do |i|
+    	puts i
+	    return false if number % i == 0
+    end
+    true
+end
+end
+
+
+puts prime_chars?(["Aaa"])
