@@ -12,13 +12,12 @@
 def alternate_words(sentence)
 	'!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
     sentence = sentence.gsub(char, ' ')
-  end
+  	end
 
 	words = sentence.split
-	puts words
 	second_word = words.select.each_with_index {|element, i| i.even?}
 
 end
 
 
-alternate_words("hej med dig?")
+puts alternate_words("hej med di'g?")
