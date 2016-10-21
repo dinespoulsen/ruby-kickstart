@@ -5,3 +5,18 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
+
+
+def got_three?(array)
+
+outcome =false
+i = 0
+	until i == array.length
+		outcome = true if array[i] == array[i + 1] && array[i + 1] == array[i + 2]
+		i += 1
+	end
+	return outcome
+end
+
+
+puts got_three?([1, 2, 1, 1])
