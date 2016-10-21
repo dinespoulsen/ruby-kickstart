@@ -21,8 +21,44 @@
 # f.to_f               # => 0.5
 
 class Fraction
-  def gcd(a,b)
-    return a if b == 0
-    gcd(b, a%b)
-  end
+attr_accessor :numerator, :denominator
+
+
+def initialize(numerator, denominator)
+	@numerator = numerator
+	@denominator = denominator
+end	
+
+def to_s
+	return  "#{numerator}/#{denominator}"
 end
+
+def to_f
+	return Float(@numerator)/Float(@denominator)
+end
+
+
+def gcd(a,b)
+	return a if b == 0
+	gcd(b, a%b)
+end
+
+def lowest
+	numerator = denominator if numerator == 0
+	holder = []
+	1.upto([@denominator, @numerator].max).each do |element|
+	holder.push(element) if @denominator % element == 0 && @numerator % element == 0
+	end
+	
+	divisor = holder.max
+	
+	Fraction.new(@numerator/divisor, @denominator/divisor)
+end
+
+
+end
+
+
+f = Fraction.new(20, 60)
+puts f.lowest
+puts f.numerator
