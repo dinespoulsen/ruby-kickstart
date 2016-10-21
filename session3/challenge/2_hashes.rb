@@ -8,3 +8,17 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase(integer)
+	hash = {}
+	0.upto(integer) do |key|
+		if key.odd?
+			add_even = (1..key).to_a.select {|element| element if element.even?}
+			#print add_even
+			hash[key] = add_even
+		end
+	end
+
+	return hash
+end
+
+staircase(5)
