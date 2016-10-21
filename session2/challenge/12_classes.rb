@@ -53,6 +53,7 @@ def lowest
 	divisor = holder.max
 	
 	Fraction.new(@numerator/divisor, @denominator/divisor)
+	
 end
 
 
