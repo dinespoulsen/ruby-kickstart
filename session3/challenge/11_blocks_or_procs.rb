@@ -30,5 +30,15 @@
 # end
 
 
-def array_init
+def array_init(number = 5, &block)
+	if block 
+		array = (0..(number-1)).to_a
+		array.map {|number| block.call(number)
+		}
+	else
+		array = (0..(number-1)).to_a.map {|number| (number * 100).to_s}
+	end
+
 end
+
+array_init(2)
